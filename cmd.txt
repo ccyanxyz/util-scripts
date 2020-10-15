@@ -1,0 +1,15 @@
+ Alias              | Command 
+--------------------+--------------------------------------------------------------------------------------------
+ twa-analyze        | docker run --rm -t trailofbits/twa -vw 
+ flush-docker       | docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes 
+ npm-taobao         | npm config set registry https://registry.npm.taobao.org 
+ fast-delete-files  | perl -e 'for(<*>){((stat)[9]<(unlink))}' 
+ check-port-process | sudo lsof -nP -iTCP:5001 
+ redirect-port      | nc -lv 1234 < nc_pipe | nc 127.0.0.1 5678 > nc_pipe 
+ keyboard-stuck-fix | echo "127.0.0.1 ocsp.apple.com" | sudo tee -a /etc/hosts 
+ enabled-services   | systemctl list-unit-files --state=enabled 
+ port-scan1         | nc -zv 8.210.105.204 20-80 
+ cut-video          | ffmpeg  -i ./code.mov -vcodec copy -acodec copy -ss 00:00:00 -to 00:04:50 ./cutout1.mp4 -y 
+ fast-delete        | rsync -a --delete empty_dir/ yourdirectory/ 
+ refresh-wifi       | ip link set wlp58s0 down && sleep 5 && ip link set wlp58s0 up 
+ port-scan          | nc -znv 127.0.0.1 1-1024 
